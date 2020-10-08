@@ -168,6 +168,7 @@ None\\
 \end{center}
 \end{table}
 
+\pagebreak
 * DONE Задача 3
 # Source: https://codeforces.com/edu/course/2/lesson/8/3/practice/contest/290941/problem/C
 
