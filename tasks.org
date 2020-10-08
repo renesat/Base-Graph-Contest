@@ -1,0 +1,226 @@
+#+TITLE: Задачи на графы
+#+LANGUAGE: russian
+#+OPTIONS: date:nil toc:nil todo:nil num:nil title:nil
+
+#+LATEX_CLASS: empty
+#+LATEX_COMPILER: xelatex
+#+LATEX_HEADER: \usepackage{longtable}
+#+LATEX_HEADER: \usepackage{wrapfig}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage[normalem]{ulem}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{breqn}
+#+LATEX_HEADER: \usepackage{textcomp}
+#+LATEX_HEADER: \usepackage{amssymb}
+#+LATEX_HEADER: \usepackage{capt-of}
+#+LATEX_HEADER: \usepackage{hyperref}
+#+LATEX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usepackage{polyglossia}
+#+LATEX_HEADER: \setmainlanguage{russian}
+#+LATEX_HEADER: \setotherlanguage{english}
+#+LATEX_HEADER: \setkeys{russian}{babelshorthands=true}
+#+LATEX_HEADER: \PolyglossiaSetup{russian}{indentfirst=true}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \setmainfont{Liberation Serif}
+#+LATEX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usepackage[left=4cm,right=4cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \PassOptionsToPackage{final}{graphicx}
+#+LATEX_HEADER: \usepackage{caption}
+#+LATEX_HEADER: \usepackage{subcaption}
+#+LATEX_HEADER: \usepackage{wrapfig}
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \usepackage{multirow}
+#+LATEX_HEADER: \usepackage{makecell}
+#+LATEX_HEADER: \definecolor{friendlybg}{HTML}{f0f0f0}
+
+
+* DONE Задача 1
+# Source: https://codeforces.com/edu/course/2/lesson/8/1/practice/contest/290939/problem/B
+
+** Постановка
+
+Задан неорентированный граф. Задача состоит в нахождении степени всех
+вершин.
+
+** Входные данные
+
+В первой строке число $t$
+($1\leq t \leq 105$) - количество наборов входных данных.
+Далее следуют $t$ наборов входных данных.
+
+В первой строке каждого набора содержатся два целых числа
+$n$ и $m$
+($1 \leq n \leq 105$, $0 \leq m \leq 105$),
+где $n$ — количество вершин в графе, $m$ — количество рёбер в графе.
+
+В следующих $m$ строках записаны рёбра, по одному ребру в строке.
+Каждое ребро - два числама $u$ и $v$ ($1 \leq u$, $v \leq n$),
+начало ребра и конец ребра соответственно.
+
+Граф без петель и кратных рёбер.
+
+** Выходные данные
+
+Для каждого набора в отдельной строке
+выведите $n$ целых чисел, где $i\text{-е}$ число является степенью $i\text{-й}$ вершины графа.
+
+** Пример
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|m{4cm}|m{4cm}|}
+\hline
+Входные данные & Выходные данные \\ \hline
+\makecell[l]{
+4
+\\\\
+5 6\\
+1 2\\
+2 3\\
+3 1\\
+4 3\\
+5 4\\
+5 2
+\\\\
+3 2\\
+1 2\\
+2 3
+\\\\
+2 1\\
+1 2
+\\\\
+4 0
+}
+&
+\makecell[l]{
+2 3 3 2 2 \\
+1 2 1 \\
+1 1 \\
+0 0 0 0 \\
+}
+\\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
+
+\pagebreak
+* DONE Задача 2
+# Source: https://codeforces.com/edu/course/2/lesson/8/2/practice/contest/290940/problem/B
+
+** Постановка
+
+Постройте $k\text{-регулярный}$ неориентированный граф из $n$ вершин.
+Если это невозможно, то укажите это.
+
+** Входные данные
+
+В первой строке находится число $t$
+($1 \leq t \leq 1000$) — количество наборов тестовых данных в тесте.
+Далее следуют $t$ наборов тестовых данных.
+
+Каждый набор состоит из одной строки, в которой записаны
+два числа $n$ и $k$ ($1 \leq n,k \leq200$).
+
+** Выходные данные
+
+Для каждого набора необходимо вывести:
+- если существуте, то вывести количество рёбер в графе и
+  ребра в следующих строках.
+- если не существует, то выведите None.
+
+** Пример
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|m{4cm}|m{4cm}|}
+\hline
+Входные данные & Выходные данные \\ \hline
+\makecell[l]{
+3\\
+3 2\\
+5 3\\
+5 4
+}
+&
+\makecell[l]{
+3\\
+1 2\\
+2 3\\
+3 1\\
+None\\
+10\\
+1 2\\
+1 3\\
+2 3\\
+2 4\\
+3 4\\
+3 5\\
+4 5\\
+4 1\\
+5 1\\
+5 2
+}
+\\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
+
+* DONE Задача 3
+# Source: https://codeforces.com/edu/course/2/lesson/8/3/practice/contest/290941/problem/C
+
+** Постановка
+
+Постройте наименьший по количеству дуг
+непустой ориентированный граф, такой что
+степень исхода каждой вершины равна $d_{1}$, а степень
+входа равна $d_{2}$.
+
+** Входные данные
+
+В первой строке находится целое число $t$
+($1 \leq t \leq 30$) — количество наборов
+входных данных в тесте.
+Далее следуют $t$ наборов.
+
+В строке каждого набора содержатся
+два целых числа $d_{1}$ и $d_{2}$ ($1 \leq d1, d2 \leq 100$) -
+степень исхода и степень входа каждой вершины соответственно.
+
+** Выходные данные
+
+Для каждого набора необходимо вывести:
+- если существуте, то вывести в первой строке Yes,
+  потом количество вершин и дуг искомого графа.
+  А в остальных строках пары дуг.
+- если не существует, то выведите None.
+
+** Пример
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|m{4cm}|m{4cm}|}
+\hline
+Входные данные & Выходные данные \\ \hline
+\makecell[l]{
+2\\
+2 2\\
+1 2\\
+}
+&
+\makecell[l]{
+Yes\\
+2 4\\
+1 1\\
+1 2\\
+2 1\\
+2 2\\
+None\\
+}
+\\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}

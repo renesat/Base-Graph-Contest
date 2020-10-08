@@ -1,0 +1,250 @@
+% Created 2020-10-08 Чт 23:48
+% Intended LaTeX compiler: xelatex
+\documentclass{extarticle}
+                
+
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{breqn}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setkeys{russian}{babelshorthands=true}
+\PolyglossiaSetup{russian}{indentfirst=true}
+\usepackage{fontspec}
+\setmainfont{Liberation Serif}
+\usepackage{minted}
+\usepackage[left=4cm,right=4cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage{xcolor}
+\PassOptionsToPackage{final}{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\definecolor{friendlybg}{HTML}{f0f0f0}
+\date{}
+\title{Задачи на графы}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Задачи на графы},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.4)}, 
+ pdflang={Russian}}
+\begin{document}
+
+
+
+\section*{Задача 1}
+\label{sec:orgc68db7b}
+\subsection*{Постановка}
+\label{sec:org622503f}
+
+Задан неорентированный граф. Задача состоит в нахождении степени всех
+вершин.
+
+\subsection*{Входные данные}
+\label{sec:orgf911c02}
+
+В первой строке число \(t\)
+(\(1\leq t \leq 105\)) - количество наборов входных данных.
+Далее следуют \(t\) наборов входных данных.
+
+В первой строке каждого набора содержатся два целых числа
+\(n\) и \(m\)
+(\(1 \leq n \leq 105\), \(0 \leq m \leq 105\)),
+где \(n\) — количество вершин в графе, \(m\) — количество рёбер в графе.
+
+В следующих \(m\) строках записаны рёбра, по одному ребру в строке.
+Каждое ребро - два числама \(u\) и \(v\) (\(1 \leq u\), \(v \leq n\)),
+начало ребра и конец ребра соответственно.
+
+Граф без петель и кратных рёбер.
+
+\subsection*{Выходные данные}
+\label{sec:org821906f}
+
+Для каждого набора в отдельной строке
+выведите \(n\) целых чисел, где \(i\text{-е}\) число является степенью \(i\text{-й}\) вершины графа.
+
+\subsection*{Пример}
+\label{sec:org76caba7}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|m{4cm}|m{4cm}|}
+\hline
+Входные данные & Выходные данные \\ \hline
+\makecell[l]{
+4
+\\\\
+5 6\\
+1 2\\
+2 3\\
+3 1\\
+4 3\\
+5 4\\
+5 2
+\\\\
+3 2\\
+1 2\\
+2 3
+\\\\
+2 1\\
+1 2
+\\\\
+4 0
+}
+&
+\makecell[l]{
+2 3 3 2 2 \\
+1 2 1 \\
+1 1 \\
+0 0 0 0 \\
+}
+\\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
+
+\pagebreak
+\section*{Задача 2}
+\label{sec:org9cf4d88}
+\subsection*{Постановка}
+\label{sec:org7044e8f}
+
+Постройте \(k\text{-регулярный}\) неориентированный граф из \(n\) вершин.
+Если это невозможно, то укажите это.
+
+\subsection*{Входные данные}
+\label{sec:org891a885}
+
+В первой строке находится число \(t\)
+(\(1 \leq t \leq 1000\)) — количество наборов тестовых данных в тесте.
+Далее следуют \(t\) наборов тестовых данных.
+
+Каждый набор состоит из одной строки, в которой записаны
+два числа \(n\) и \(k\) (\(1 \leq n,k \leq200\)).
+
+\subsection*{Выходные данные}
+\label{sec:orga366ca5}
+
+Для каждого набора необходимо вывести:
+\begin{itemize}
+\item если существуте, то вывести количество рёбер в графе и
+ребра в следующих строках.
+\item если не существует, то выведите None.
+\end{itemize}
+
+\subsection*{Пример}
+\label{sec:orgd6c17dd}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|m{4cm}|m{4cm}|}
+\hline
+Входные данные & Выходные данные \\ \hline
+\makecell[l]{
+3\\
+3 2\\
+5 3\\
+5 4
+}
+&
+\makecell[l]{
+3\\
+1 2\\
+2 3\\
+3 1\\
+None\\
+10\\
+1 2\\
+1 3\\
+2 3\\
+2 4\\
+3 4\\
+3 5\\
+4 5\\
+4 1\\
+5 1\\
+5 2
+}
+\\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
+
+\section*{Задача 3}
+\label{sec:org1910d5f}
+\subsection*{Постановка}
+\label{sec:orgb9a7c08}
+
+Постройте наименьший по количеству дуг
+непустой ориентированный граф, такой что
+степень исхода каждой вершины равна \(d_{1}\), а степень
+входа равна \(d_{2}\).
+
+\subsection*{Входные данные}
+\label{sec:org3bea425}
+
+В первой строке находится целое число \(t\)
+(\(1 \leq t \leq 30\)) — количество наборов
+входных данных в тесте.
+Далее следуют \(t\) наборов.
+
+В строке каждого набора содержатся
+два целых числа \(d_{1}\) и \(d_{2}\) (\(1 \leq d1, d2 \leq 100\)) -
+степень исхода и степень входа каждой вершины соответственно.
+
+\subsection*{Выходные данные}
+\label{sec:org016c890}
+
+Для каждого набора необходимо вывести:
+\begin{itemize}
+\item если существуте, то вывести в первой строке Yes,
+потом количество вершин и дуг искомого графа.
+А в остальных строках пары дуг.
+\item если не существует, то выведите None.
+\end{itemize}
+
+\subsection*{Пример}
+\label{sec:orgc19d9e4}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|m{4cm}|m{4cm}|}
+\hline
+Входные данные & Выходные данные \\ \hline
+\makecell[l]{
+2\\
+2 2\\
+1 2\\
+}
+&
+\makecell[l]{
+Yes\\
+2 4\\
+1 1\\
+1 2\\
+2 1\\
+2 2\\
+None\\
+}
+\\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
+\end{document}
