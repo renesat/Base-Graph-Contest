@@ -1,7 +1,8 @@
-def find_graph(samples: list) -> list:
+def find_graph(d_1: int, d_2: int) -> list:
     """
     Parameters:
-    :samples (list): list of parir ($d_1$, $d_2).
-    :return: list of eges lists or None
+    :d_1 (int): output degree
+    :d_2 (int): input degree
+    :return: list of edges or None
     """
     pass

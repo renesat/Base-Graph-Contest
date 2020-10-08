@@ -1,7 +1,8 @@
-def find_graphs_degrees(graphs: list) -> list:
+def find_graph_vertices_degrees(m: int, edges: list) -> list:
     """
     Parameters:
-    :graphs (list): list of graphs. Item is pair (m, edges) where m is number of cells and edges is list of edges pair.
-    :return: list of list degrees for each graph.
+    :m (int): number of vertices
+    :edges (int): list of pairs
+    :return: list of degrees for each vertices
     """
     pass

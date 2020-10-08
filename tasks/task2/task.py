@@ -1,7 +1,8 @@
-def find_regular_graph(samples: list) -> list:
+def find_regular_graph(n: int, k: int) -> list:
     """
     Parameters:
-    :samples (list): list of pairs (n, k).
-    :return: list of eges lists or None
+    :n (int): number of vertices
+    :k (int): graph degree
+    :return: list of edges or None
     """
     pass

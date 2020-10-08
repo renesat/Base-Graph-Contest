@@ -4,10 +4,11 @@ from .task import find_graph
 
 
 class Case:
-    def __init__(self, name: str, samples: list, answers: list):
+    def __init__(self, name: str, d_1: int, d_2: int, graph: list):
         self._name = name
-        self.samples = samples
-        self.answers = answers
+        self.d_1 = d_1
+        self.d_2 = d_2
+        self.graph = graph
 
     def __str__(self) -> str:
         return 'task3_test_{}'.format(self._name)
@@ -15,25 +16,29 @@ class Case:
 
 TEST_CASES = [
     Case(
-        name='base',
-        samples=[
-            (2, 2),
+        name='base1',
+        d_1=2,
+        d_2=2,
+        graph=[
+            (1, 1),
             (1, 2),
+            (2, 1),
+            (2, 2),
         ],
-        answers=[
-            [
-                (1, 1),
-                (1, 2),
-                (2, 1),
-                (2, 2),
-            ],
-            None,
-        ],
+    ),
+    Case(
+        name='base2',
+        d_1=1,
+        d_2=2,
+        graph=None,
     )
 ]
 
 
 @pytest.mark.parametrize('case', TEST_CASES, ids=str)
 def test_task3(case: Case) -> None:
-    answer = find_graph(samples=case.samples)
-    assert answer == case.answers
+    answer = find_graph(
+        d_1=case.d_1,
+        d_2=case.d_2,
+    )
+    assert answer == case.graph
