@@ -19,12 +19,12 @@ TEST_CASES = [
         name='base1',
         d_1=2,
         d_2=2,
-        graph=[
+        graph=(2, [
             (1, 1),
             (1, 2),
             (2, 1),
             (2, 2),
-        ],
+        ]),
     ),
     Case(
         name='base2',
